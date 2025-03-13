@@ -15,63 +15,88 @@
         android:textAlignment="center"
         android:textSize="30sp" />
 
-    <RadioGroup
-        android:id="@+id/radio_group_coffee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/radio_espresso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="espresso" />
-
-        <RadioButton
-            android:id="@+id/radio_cappuccino"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="cappuccino" />
-
-        <RadioButton
-            android:id="@+id/radio_latte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="latte" />
-    </RadioGroup>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <CheckBox
+        <RadioGroup
+            android:id="@+id/radio_group_coffee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cukier" />
+            android:layout_margin="10dp">
 
-        <CheckBox
+            <RadioButton
+                android:id="@+id/radio_espresso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="espresso" />
+
+            <RadioButton
+                android:id="@+id/radio_cappuccino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cappuccino" />
+
+            <RadioButton
+                android:id="@+id/radio_latte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="latte" />
+        </RadioGroup>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mleko" />
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
+            <CheckBox
+                android:id="@+id/check_box_sugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cukier" />
+
+            <CheckBox
+                android:id="@+id/check_box_milk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mleko" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liczba porcji: " />
 
         <TextView
             android:id="@+id/text_view_quantity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Liczba porcji" />"
-
-        <SeekBar
-            android:id="@+id/seek_bar_quantity"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seek_bar_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:min="1" />
+
+    <Button
+        android:id="@+id/button_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Złóż zamówienie" />
+
 
     <ImageView
         android:id="@+id/image_view_coffee"
