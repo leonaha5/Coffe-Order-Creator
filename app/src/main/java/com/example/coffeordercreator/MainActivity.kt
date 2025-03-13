@@ -60,8 +60,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonOrder.setOnClickListener {
+            val selectedRadioButtonId = radioGroupCoffee.checkedRadioButtonId
+            if (selectedRadioButtonId == -1) {
+                return@setOnClickListener
+            }
             val selectedRadioButton =
-                findViewById<RadioButton>(radioGroupCoffee.checkedRadioButtonId)
+                findViewById<RadioButton>(selectedRadioButtonId)
             val checkBoxSugar = findViewById<CheckBox>(R.id.check_box_sugar)
             val checkBoxMilk = findViewById<CheckBox>(R.id.check_box_milk)
             val text = "Zamówienie złożone!\n" +
@@ -69,7 +73,6 @@ class MainActivity : AppCompatActivity() {
                     "Dodatki: mleko - ${checkBoxMilk.isChecked.toString()}, " +
                     "cukier - ${checkBoxSugar.isChecked.toString()}\n" +
                     "Ilość: ${seekBarQuantity.progress.toString()}"
-
 
             Log.d("MainActivity", text)
         }
